@@ -1,0 +1,28 @@
+---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+} from "astro-navbar";
+---
+
+<header class="lg:flex p-5 gap-5 bg-cream justify-between md:justify-around">
+  <Astronav>
+    <div class="flex justify-between md:justify-around w-auto items-center">
+      <img src="gepetin.png" class="w-28 h-14 object-contain" alt="Logo" />
+      <div class="block lg:hidden">
+        <MenuIcon class="w-4 h-4 text-gray-800" />
+      </div>
+    </div>
+    <MenuItems class="hidden lg:flex">
+      <ul class="flex flex-col lg:flex-row lg:gap-5">
+        <li>Home</li>
+        <li>About</li>
+        <li>Proyectos</li>
+        <li>Contacto</li>
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>

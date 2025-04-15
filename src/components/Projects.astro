@@ -1,0 +1,64 @@
+---
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  ShieldHalf,
+  Computer,
+  Mail,
+  Pin,
+  CheckCircle,
+  ArrowRight,
+} from "@lucide/astro";
+import { Separator } from "./ui/separator";
+---
+
+<div
+  class="bg-cream flex flex-col py-10 md:py-20 px-8 md:px-0 text-tertiary relative"
+>
+  <main class="container mx-auto flex flex-col items-center gap-16 z-10">
+    <div class="flex flex-col items-center gap-3">
+      <h2 class="text-4xl font-bold">Nuestros proyectos</h2>
+      <p class="text-xl text-center max-w-2xl">
+        Personalizamos totalmente nuestros servicios para adaptarnos a tus
+        necesidades. Nos aseguramos de que cada proyecto sea <span
+          class="font-bold">único</span
+        >.
+      </p>
+      <Separator className="mt-4 max-w-[50%]" />
+    </div>
+    <section
+      class="w-full flex flex-col items-center justify-center gap-10 md:gap-20"
+    >
+      <Card>
+        <img src="mock1.png" />
+      </Card>
+    </section>
+    <div
+      class="flex flex-col items-center gap-5 justify-center text-center text-tertiary"
+    >
+      <div>
+        <h2 class="text-2xl">¿Listo para transformar tu negocio?</h2>
+        <p class="text-lg">
+          Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus
+          objetivos.
+        </p>
+      </div>
+      <Button variant="tech"
+        >Solicitar una consulta <ArrowRight class="ml-2 h-4 w-4" /></Button
+      >
+    </div>
+  </main>
+
+  <img
+    src="Cloudy.svg"
+    alt="Cloudy Background"
+    class="absolute bottom-0 left-0 w-full opacity-30"
+  />
+</div>
