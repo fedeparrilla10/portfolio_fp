@@ -8,16 +8,20 @@ import {
 } from "astro-navbar";
 ---
 
-<header class="lg:flex p-5 gap-5 bg-cream justify-between md:justify-around">
+<header
+  class="lg:flex p-5 gap-5 justify-between md:justify-around bg-lightblue"
+>
   <Astronav>
     <div class="flex justify-between md:justify-around w-auto items-center">
       <img src="gepetin.png" class="w-28 h-14 object-contain" alt="Logo" />
       <div class="block lg:hidden">
-        <MenuIcon class="w-4 h-4 text-gray-800" />
+        <MenuIcon class="w-4 h-4 text-tertiary" />
       </div>
     </div>
-    <MenuItems class="hidden lg:flex">
-      <ul class="flex flex-col lg:flex-row lg:gap-5">
+    <MenuItems class="hidden lg:flex lg:items-center">
+      <ul
+        class="flex flex-col lg:flex-row lg:gap-5 text-tertiary font-semibold"
+      >
         <li>Home</li>
         <li>About</li>
         <li>Proyectos</li>

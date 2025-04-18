@@ -19,6 +19,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-light-blue: #a8dadc;
   --color-steel-blue: #457b9d;
@@ -59,8 +67,8 @@
 }
 
 @theme {
-  --color-primary: var(--color-light-blue);
-  --color-secondary: var(--color-steel-blue);
+  --color-lightblue: var(--color-light-blue);
+  --color-steelblue: var(--color-steel-blue);
   --color-tertiary: var(--color-dark-blue);
   --color-cream: var(--color-cream);
   --font-family: "BebasNeue", sans-serif;

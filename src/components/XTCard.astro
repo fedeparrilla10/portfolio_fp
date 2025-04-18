@@ -1,0 +1,85 @@
+---
+import { Button } from "./ui/button.tsx";
+import { ArrowRight } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const { title, tags, src } = Astro.props;
+---
+
+<Card
+  className="w-full md:w-1/2 py-5 flex flex-col md:flex-row gap-8 rounded-3xl overflow-hidden bg-gradient-to-br from-lightblue/5 to-lightblue/15 backdrop-blur-sm border border-lightblue/20 shadow-xl transition-all duration-300 hover:shadow-lightblue/20 hover:-translate-y-0.5 group relative"
+>
+  <!-- Elemento decorativo -->
+  <div
+    class="absolute -top-10 -left-10 w-40 h-40 bg-lightblue/10 rounded-full blur-2xl opacity-70"
+  >
+  </div>
+  <div
+    class="absolute -bottom-10 -right-10 w-40 h-40 bg-steelblue/10 rounded-full blur-2xl opacity-70"
+  >
+  </div>
+
+  <CardContent className="px-4.5 flex-shrink-0 relative">
+    <div
+      class="absolute inset-0 bg-gradient-to-tr from-lightblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"
+    >
+    </div>
+    <img
+      src="mock1.png"
+      class="w-full md:w-[700px] h-[350px] object-cover rounded-3xl shadow-lg transform transition-transform duration-500 group-hover:scale-[1.01]"
+      alt={title}
+    />
+    <!-- Etiquetas flotantes -->
+    <div class="absolute top-4 left-7 flex gap-2 flex-wrap">
+      <span
+        class="bg-lightblue/80 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm"
+        >Desarrollo Web</span
+      >
+      <span
+        class="bg-steelblue/80 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm"
+        >Diseño Web</span
+      >
+    </div>
+  </CardContent>
+
+  <div
+    class="flex flex-col gap-4 md:h-[350px] justify-between py-1 px-4 relative z-10"
+  >
+    <CardHeader className="p-0">
+      <CardTitle className="text-3xl md:text-4xl font-bold text-tertiary"
+        >{title}</CardTitle
+      >
+    </CardHeader>
+    <CardDescription>
+      <p>
+        Utilizamos las últimas tecnologías y herramientas para garantizar que
+        nuestros proyectos sean escalables, seguros y fáciles de mantener. Nos
+        aseguramos de que cada proyecto esté optimizado para un rendimiento
+        óptimo y una experiencia de usuario fluida.
+      </p>
+      <p class="mt-2">
+        En este proyecto de ejemplo, hemos utilizado tecnologías como React y
+        Tailwind CSS para crear una interfaz de usuario moderna y atractiva.
+      </p>
+    </CardDescription>
+    <CardFooter className="p-0 mt-4">
+      <Button variant="tech" className="w-full relative overflow-hidden">
+        <span class="relative z-10 flex items-center">
+          Ver proyecto <ArrowRight
+            className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </span>
+        <!-- <span
+          class="absolute inset-0 bg-gradient-to-r from-lightblue to-steelblue opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        ></span> -->
+      </Button>
+    </CardFooter>
+  </div>
+</Card>

@@ -1,0 +1,92 @@
+---
+const brands = [
+  {
+    id: 1,
+    name: "XiroTek",
+    src: "gepetin.png",
+  },
+  {
+    id: 2,
+    name: "XiroTek",
+    src: "gepetin.png",
+  },
+  {
+    id: 3,
+    name: "XiroTek",
+    src: "gepetin.png",
+  },
+  {
+    id: 4,
+    name: "XiroTek",
+    src: "gepetin.png",
+  },
+  {
+    id: 5,
+    name: "XiroTek",
+    src: "gepetin.png",
+  },
+  {
+    id: 6,
+    name: "XiroTek",
+    src: "gepetin.png",
+  },
+  {
+    id: 7,
+    name: "XiroTek",
+    src: "gepetin.png",
+  },
+  {
+    id: 8,
+    name: "XiroTek",
+    src: "gepetin.png",
+  },
+];
+---
+
+<div
+class="w-full flex flex-col items-center gap-5 justify-center text-center text-tertiary"
+>
+<div class="w-full flex flex-col pt-20">
+  <h2 class="text-4xl mb-8">Confiaron en nosotros</h2>
+  <div class="slider pt-5">
+    <div class="logos-track">
+      {
+        [...brands, ...brands].map((brand) => (
+          <img src={"gepetin.png"} alt={brand.name} class="logo-item" />
+          <img src={"tiydi.png"} alt={brand.name} class="logo-item" />
+        ))
+      }
+    </div>
+  </div>
+</div>
+</div>
+
+<style>
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .logos-track {
+      display: flex;
+      gap: 40px;
+      animation: slide 45s linear infinite;
+    }
+  
+    .logo-item {
+      height: 100px;
+      object-fit: contain;
+      transition: filter 0.3s ease;
+    }
+  
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+  

@@ -1,23 +1,8 @@
 ---
-// filepath: c:\Users\fedei\Desktop\Freelancing\portfolio_fp\src\components\Grid.astro
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  ShieldHalf,
-  Computer,
-  Mail,
-  Pin,
-  CheckCircle,
-  ArrowRight,
-} from "@lucide/astro";
-import { Separator } from "./ui/separator";
+import { ShieldHalf, Computer, Mail, Pin, ArrowRight } from "@lucide/astro";
+import XTVerticalCard from "./XTVerticalCard.astro";
+import XTTitle from "./XTTitle.astro";
+import XTFooter from "./XTFooter.astro";
 
 const cards = [
   {
@@ -75,70 +60,21 @@ const cards = [
   <main
     class="container mx-auto min-h-screen flex flex-col justify-around items-center gap-16"
   >
-    <div class="flex flex-col items-center gap-3">
-      <h2 class="text-4xl">Lo que podemos ofrecerte</h2>
-      <p class="text-xl">
-        Ofrecemos nuestros servicios con máxima seriedad y profesionalidad
-      </p>
-      <Separator className="mt-4 max-w-[50%]" />
-    </div>
+    <XTTitle
+      title="Impulsa tu negocio con tecnología de vanguardia"
+      subtitle="Transformamos ideas en experiencias digitales excepcionales que destacan en el mercado actual"
+      color="cream"
+    />
     <section class="flex flex-row justify-around items-center gap-4">
-      <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {
-          cards.map((card) => (
-            <Card className="bg-cream text-tertiary flex flex-col justify-between">
-              <CardHeader className="mb-4">
-                <CardTitle className="text-2xl flex items-center gap-2">
-                  <card.icon />
-                  <h3 class="pb-1">{card.title}</h3>
-                </CardTitle>
-                <CardDescription>{card.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-col items-center gap-4">
-                <img
-                  src={card.image}
-                  alt={card.imageAlt}
-                  class="rounded-md w-[300px] h-[150px]"
-                />
-                <ul class="mt-4 list-disc list-inside text-left space-y-2">
-                  {card.bullets.map((bullet) => (
-                    <li class="list-none flex items-center gap-2">
-                      <CheckCircle class="flex-shrink-0" size={20} /> {bullet}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter className="mt-6 flex justify-center">
-                <Button
-                  variant="tech"
-                  className="w-full group flex items-center"
-                >
-                  <card.buttonIcon /> {card.buttonText}
-                  <ArrowRight
-                    size={32}
-                    class="ml-2 h-4 w-4 opacity-0 group-hover:opacity-100 duration-300 group-hover:translate-x-1 transition-transform"
-                  />
-                </Button>
-              </CardFooter>
-            </Card>
-          ))
-        }
+      <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {cards.map((card) => <XTVerticalCard card={card} />)}
       </div>
     </section>
-    <div
-      class="flex flex-col items-center gap-5 justify-center text-center text-tertiary"
-    >
-      <div>
-        <h2 class="text-2xl">¿Listo para transformar tu negocio?</h2>
-        <p class="text-lg">
-          Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus
-          objetivos.
-        </p>
-      </div>
-      <Button variant="tech"
-        >Solicitar una consulta <ArrowRight class="ml-2 h-4 w-4" /></Button
-      >
-    </div>
+    <XTFooter
+      title="¿Listo para transformar tu negocio?"
+      subtitle="Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus objetivos."
+      buttonText="Solicitar una consulta"
+    />
   </main>
 </div>
 

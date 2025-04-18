@@ -1,0 +1,54 @@
+---
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, ArrowRight } from "@lucide/astro";
+const { card } = Astro.props;
+const { title, description, image, imageAlt, buttonText, buttonIcon, bullets } =
+  card;
+---
+
+<Card
+  className="bg-cream text-tertiary flex flex-col justify-between rounded-3xl overflow-hidden border border-cream/20 shadow-xl transition-all duration-300 hover:shadow-cream/20 hover:-translate-y-0.5 group relative"
+>
+  <CardHeader className="mb-4">
+    <CardTitle className="text-2xl flex items-center gap-2">
+      <card.icon />
+      <h3 class="pb-1">{title}</h3>
+    </CardTitle>
+    <CardDescription>{description}</CardDescription>
+  </CardHeader>
+  <CardContent className="flex flex-col items-center gap-4">
+    <img
+      src={image}
+      alt={imageAlt}
+      class="rounded-md w-[300px] h-[150px] transform transition-transform duration-500 group-hover:scale-[1.01]"
+    />
+    <ul class="mt-4 list-disc list-inside text-left space-y-2">
+      {
+        bullets.map((bullet: string) => (
+          <li class="list-none flex items-center gap-2">
+            <CheckCircle class="flex-shrink-0" size={20} />
+            {bullet}
+          </li>
+        ))
+      }
+    </ul>
+  </CardContent>
+  <CardFooter className="mt-6 flex justify-center">
+    <Button variant="tech" className="w-full group flex items-center">
+      <card.buttonIcon />
+      {buttonText}
+      <ArrowRight
+        size={32}
+        class="ml-2 h-4 w-4 opacity-0 group-hover:opacity-100 duration-300 group-hover:translate-x-1 transition-transform"
+      />
+    </Button>
+  </CardFooter>
+</Card>
