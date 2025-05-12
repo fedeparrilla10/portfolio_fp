@@ -9,13 +9,14 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight } from "@lucide/astro";
+
 const { card } = Astro.props;
 const { title, description, image, imageAlt, buttonText, buttonIcon, bullets } =
   card;
 ---
 
 <Card
-  className="bg-cream text-tertiary flex flex-col justify-between rounded-3xl overflow-hidden border border-cream/20 shadow-xl transition-all duration-300 hover:shadow-cream/20 hover:-translate-y-0.5 group relative"
+  className="bg-cream text-tertiary flex flex-col justify-between rounded-3xl overflow-hidden border border-cream/20 shadow-xl"
 >
   <CardHeader className="mb-4">
     <CardTitle className="text-2xl flex items-center gap-2">
@@ -24,7 +25,7 @@ const { title, description, image, imageAlt, buttonText, buttonIcon, bullets } =
     </CardTitle>
     <CardDescription>{description}</CardDescription>
   </CardHeader>
-  <CardContent className="flex flex-col items-center gap-4">
+  <CardContent className="flex flex-col items-center gap-4 px-6">
     <img
       src={image}
       alt={imageAlt}

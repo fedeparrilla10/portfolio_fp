@@ -1,6 +1,6 @@
 ---
-import { ShieldHalf, Computer, Mail, Pin, ArrowRight } from "@lucide/astro";
-import XTVerticalCard from "./XTVerticalCard.astro";
+import { ShieldHalf, Computer, Mail, Pin } from "@lucide/astro";
+import InfoCard from "./InfoCard.astro";
 import XTTitle from "./XTTitle.astro";
 import XTFooter from "./XTFooter.astro";
 
@@ -56,7 +56,9 @@ const cards = [
 ];
 ---
 
-<div class="gradient flex flex-col text-cream py-20 md:py-0 px-8 md:px-0">
+<div
+  class="gradient flex flex-col text-cream py-20 md:py-0 md:pb-10 px-8 md:px-0"
+>
   <main
     class="container mx-auto min-h-screen flex flex-col justify-around items-center gap-16"
   >
@@ -67,7 +69,7 @@ const cards = [
     />
     <section class="flex flex-row justify-around items-center gap-4">
       <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {cards.map((card) => <XTVerticalCard card={card} />)}
+        {cards.map((card) => <InfoCard card={card} />)}
       </div>
     </section>
     <XTFooter

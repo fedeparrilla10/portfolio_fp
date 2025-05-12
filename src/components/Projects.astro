@@ -1,33 +1,51 @@
 ---
 import XTTitle from "./XTTitle.astro";
-import XTCard from "./XTCard.astro";
+import ProjectCard from "./ProjectCard.astro";
 import XTFooter from "./XTFooter.astro";
+import { UtensilsCrossed, BookMarked, TreePine } from "@lucide/astro";
 
 const projects = [
   {
     id: 1,
-    title: "Título",
+    title: "Restaurante Coso",
     tags: ["Desarrollo Web", "Diseño Web"],
+    icon: UtensilsCrossed,
     src: "mock1.png",
+    philosophy:
+      "Creemos en la autenticidad y la cercanía. Nuestro trabajo potencia negocios gastronómicos que buscan conectar con sus clientes a través de experiencias digitales cálidas y memorables.",
+    description:
+      "En este caso, creamos esta divertida web para un restaurante de comida rápida, donde la experiencia del usuario es clave. La web es fácil de navegar y permite a los usuarios encontrar rápidamente lo que buscan.",
   },
   {
     id: 2,
-    title: "Título",
+    title: "El Club NoNol",
     tags: ["Desarrollo Web", "Diseño Web"],
+    icon: BookMarked,
     src: "mock2.png",
+    philosophy:
+      "Creemos en la autenticidad y la cercanía. Nuestro trabajo potencia negocios gastronómicos que buscan conectar con sus clientes a través de experiencias digitales cálidas y memorables.",
+    description:
+      "Creamos este ejemplo para una librería de barrio que busca conectar con su comunidad. La web es fácil de navegar y permite a los usuarios encontrar rápidamente lo que buscan.",
   },
   {
     id: 3,
-    title: "Título",
+    title: "El Tostado",
     tags: ["Desarrollo Web", "Diseño Web"],
+    icon: TreePine,
     src: "mock3.png",
+    philosophy:
+      "Buscamos impulsar marcas con propósito. Trabajamos con negocios que quieren crecer de manera sostenible y dejar huella positiva en su entorno.",
+    description:
+      "Este es un ejemplo para una web de turismo, donde la experiencia del usuario es clave. La web es fácil de navegar y permite a los usuarios encontrar rápidamente lo que buscan.",
   },
 ];
 ---
 
-<div class="bg-cream flex flex-col text-cream py-20 md:py-0 px-8 md:px-0">
+<div
+  class="bg-cream flex flex-col text-cream py-20 md:py-10 md:pt-12 px-8 md:px-0"
+>
   <main
-    class="mx-auto min-h-screen flex flex-col justify-around items-center gap-16"
+    class="container mx-auto min-h-screen flex flex-col justify-around items-center gap-16"
   >
     <XTTitle
       title="Conoce nuestra filosofía de trabajo"
@@ -36,11 +54,11 @@ const projects = [
     />
 
     <section
-      class="w-full flex flex-col items-center justify-center gap-8 md:gap-10 my-10"
+      class="w-full flex flex-col items-center justify-center gap-8 md:gap-18"
     >
       {
-        projects.map((project) => (
-          <XTCard title={project.title} tags={project.tags} src={project.src} />
+        projects.map((project, index) => (
+          <ProjectCard project={project} reverse={index % 2 === 1} />
         ))
       }
     </section>

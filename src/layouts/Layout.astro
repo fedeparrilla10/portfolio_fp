@@ -1,3 +1,7 @@
+---
+import { ClientRouter } from "astro:transitions";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,6 +10,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
+    <ClientRouter />
   </head>
   <body>
     <slot />
@@ -16,13 +21,14 @@
   html,
   body {
     width: 100%;
-    background-color: #fffafa;
+    background-color: var(--color-cream);
+    background-position: center;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     font-family:
       Montserrat,
-      Times New Roman,
+      Roboto,
       -apple-system,
       BlinkMacSystemFont,
       "Segoe UI",

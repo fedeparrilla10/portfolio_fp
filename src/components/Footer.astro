@@ -1,0 +1,33 @@
+---
+import { Heart } from "@lucide/astro";
+---
+
+<footer class="relative">
+  <div class="w-full h-10 overflow-hidden">
+    <svg
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+      class="w-full h-full"
+    >
+      <path
+        d="M0,40 C180,100 280,0 540,40 C800,80 1000,0 1200,40 L1200,120 L0,120 Z"
+        class="fill-lightblue"></path>
+      <path
+        d="M0,60 C200,20 400,100 600,60 C800,20 1000,80 1200,60 L1200,120 L0,120 Z"
+        class="fill-tertiary"></path>
+    </svg>
+  </div>
+
+  <div class="text-center bg-tertiary text-cream pb-4">
+    <p class="text-sm tracking-wide">
+      2025 | Diseñado y desarrollado con{" "}
+      <span class="text-lightblue">
+        <Heart class="inline-block w-4 h-4" />
+      </span>{" "}
+      por
+      <a href="https://www.xtech.com.co" class="text-lightblue ml-1">
+        nosotros mismos
+      </a>
+    </p>
+  </div>
+</footer>
