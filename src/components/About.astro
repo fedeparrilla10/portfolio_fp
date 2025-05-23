@@ -1,0 +1,63 @@
+---
+import XTTitle from "./XTTitle.astro";
+---
+
+<div
+  class="bg-cream flex flex-col text-dark py-20 md:py-10 md:pt-12 px-8 md:px-0"
+>
+  <main class="container mx-auto flex flex-col items-center gap-16">
+    <XTTitle
+      title="¿Quién soy?"
+      subtitle="Creador de experiencias digitales"
+      color="tertiary"
+    />
+
+    <section
+      class="w-full flex flex-col items-center justify-center gap-20 md:gap-18"
+    >
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="overflow-hidden relative flex items-center justify-center">
+          <img
+            src="yo2.png"
+            alt="Foto de perfil"
+            class="w-[300px] h-[250px] relative z-10 shadow-xl object-cover"
+            style={{
+              boxShadow:
+                "0 8px 32px 0 rgba(56,189,248,0.25), 0 4px 24px 0 rgba(251,191,36,0.35)", // lightblue y tertiary
+            }}
+          />
+        </div>
+        {/* Gradiente para desvanecer la parte inferior */}
+
+        {/* Línea vertical decorativa */}
+
+        <div
+          class="hidden md:flex h-[300px] w-px bg-gradient-to-b from-tertiary via-lightBlue-400 to-tertiary mx-6 opacity-70"
+        >
+        </div>
+        <div class="space-y-4 max-w-2xl">
+          <div>
+            <h2 class="text-2xl font-bold text-tertiary">Federico Parrilla</h2>
+            <h3 class="text-sm font-semibold text-tertiary uppercase">
+              Desarrollo y Diseño Web
+            </h3>
+          </div>
+          <p class="text-lg leading-relaxed text-tertiary">
+            Ayudo a empresas y profesionales a crear su presencia digital con
+            diseños elegantes y funcionales que conectan con su audiencia.
+          </p>
+          <p class="text-lg leading-relaxed text-tertiary">
+            Con más de 10 años dedicados a transformar ideas en sitios web
+            atractivos, mi enfoque se centra en crear experiencias digitales que
+            comunican tu esencia y generan resultados.
+          </p>
+          <p class="text-lg leading-relaxed text-tertiary">
+            Cada proyecto es único, por eso trabajo estrechamente contigo para
+            entender tus necesidades y crear soluciones personalizadas que
+            reflejen tu visión.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

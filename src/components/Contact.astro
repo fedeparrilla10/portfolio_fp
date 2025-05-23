@@ -3,7 +3,7 @@ import XTTitle from "./XTTitle.astro";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight, CheckCheck } from "@lucide/astro";
 ---
 
 <div class="bg-cream text-tertiary py-20 md:py-10 md:my-4">
@@ -17,11 +17,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
     <section
       class="w-full flex flex-col-reverse md:flex-row items-center justify-around gap-10 md:px-10"
     >
-      <form
-        class="w-full max-w-2xl flex flex-col gap-8 px-6"
-        action="https://formspree.io/f/xjvjlqzj"
-        method="POST"
-      >
+      <form class="w-full max-w-2xl flex flex-col gap-8 px-6" id="contact-form">
         <div class="flex flex-col gap-6">
           <div class="flex flex-col">
             <label for="name" class="mb-2 font-medium">Nombre</label>
@@ -58,7 +54,11 @@ import { Mail, MapPin, Phone } from "lucide-react";
           </div>
         </div>
 
-        <Button type="submit" variant="tech">Enviar mensaje</Button>
+        <Button type="submit" variant="tech"
+          >Enviar mensaje <ArrowRight size={32} class="ml-2 h-4 w-4" />
+        </Button>
+
+        <p id="form-status"></p>
       </form>
 
       <!-- Información complementaria -->
@@ -73,7 +73,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
         <ul class="space-y-4 text-base">
           <li class="flex items-start gap-4">
-            <Mail className="w-5 h-5 mt-1" />
+            <Mail class="w-5 h-5 mt-1" />
             <a
               href="mailto:info@xirotek.com"
               class="underline hover:text-primary"
@@ -82,11 +82,11 @@ import { Mail, MapPin, Phone } from "lucide-react";
             </a>
           </li>
           <li class="flex items-start gap-4">
-            <Phone className="w-5 h-5 mt-1" />
+            <Phone class="w-5 h-5 mt-1" />
             <span>+34 676 776 114</span>
           </li>
           <li class="flex items-start gap-4">
-            <MapPin className="w-5 h-5 mt-1" />
+            <MapPin class="w-5 h-5 mt-1" />
             <span>Galicia, España (trabajamos a distancia)</span>
           </li>
         </ul>
@@ -94,3 +94,41 @@ import { Mail, MapPin, Phone } from "lucide-react";
     </section>
   </main>
 </div>
+
+<script type="module">
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries()); // convierte FormData a objeto plano
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/fedeparrilla.dev@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      const result = await response.json();
+
+      if (response.ok) {
+        status.textContent = "¡Mensaje enviado con éxito!";
+        status.classList.add("text-steelblue");
+        form.reset();
+      } else {
+        status.textContent =
+          result.message || "Hubo un error al enviar el formulario.";
+      }
+    } catch (err) {
+      status.textContent = "Error de red. Intenta más tarde.";
+    }
+  });
+</script>

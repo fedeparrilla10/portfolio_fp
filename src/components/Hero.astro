@@ -1,5 +1,5 @@
 ---
-import { Bolt, Smartphone, LineChart } from "@lucide/astro";
+import { Bolt, Smartphone, LineChart, ArrowRight } from "@lucide/astro";
 import { Button } from "./ui/button";
 ---
 
@@ -37,7 +37,9 @@ import { Button } from "./ui/button";
         </div>
 
         <div class="mt-8 md:mt-12">
-          <Button variant="tech" size="lg"> Comienza ahora </Button>
+          <Button variant="tech" size="lg">
+            Comienza ahora <ArrowRight size={32} class="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>
