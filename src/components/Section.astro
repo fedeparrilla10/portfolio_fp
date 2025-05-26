@@ -1,0 +1,9 @@
+---
+const { backgroundColor, textColor, customClass } = Astro.props;
+---
+
+<section
+  class=`${backgroundColor} text-${textColor} py-10 md:py-8 px-5 flex flex-col ${customClass}`
+>
+  <slot />
+</section>

@@ -1,4 +1,5 @@
 ---
+import Section from "./Section.astro";
 const brands = [
   {
     id: 1,
@@ -43,12 +44,12 @@ const brands = [
 ];
 ---
 
+<Section backgroundColor="tertiary" textColor="text-cream">
 <div
-class="w-full flex flex-col items-center gap-5 justify-center text-center text-tertiary"
+class="w-full flex flex-col items-center gap-5 justify-center text-center text-tertiary pb-4"
 >
-<div class="w-full flex flex-col pt-20">
-  <h2 class="text-4xl mb-8">Confiaron en nosotros</h2>
-  <div class="slider pt-5">
+<div class="w-full flex flex-col">
+  <div class="slider">
     <div class="logos-track">
       {
         [...brands, ...brands].map((brand) => (
@@ -60,6 +61,7 @@ class="w-full flex flex-col items-center gap-5 justify-center text-center text-t
   </div>
 </div>
 </div>
+</Section>
 
 <style>
     .slider {
@@ -71,11 +73,11 @@ class="w-full flex flex-col items-center gap-5 justify-center text-center text-t
     .logos-track {
       display: flex;
       gap: 40px;
-      animation: slide 45s linear infinite;
+      animation: slide 80s linear infinite;
     }
   
     .logo-item {
-      height: 100px;
+      height: 50px;
       object-fit: contain;
       transition: filter 0.3s ease;
     }

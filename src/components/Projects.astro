@@ -1,4 +1,5 @@
 ---
+import Section from "./Section.astro";
 import XTTitle from "./XTTitle.astro";
 import ProjectCard from "./ProjectCard.astro";
 import XTFooter from "./XTFooter.astro";
@@ -10,7 +11,7 @@ const projects = [
     title: "Restaurante Coso",
     tags: ["Desarrollo Web", "Diseño Web"],
     icon: UtensilsCrossed,
-    src: "mock1.png",
+    src: "/portfolio_fp/mock1.png",
     philosophy:
       "Creemos en la autenticidad y la cercanía. Nuestro trabajo potencia negocios gastronómicos que buscan conectar con sus clientes a través de experiencias digitales cálidas y memorables.",
     description:
@@ -21,7 +22,7 @@ const projects = [
     title: "El Club NoNol",
     tags: ["Desarrollo Web", "Diseño Web"],
     icon: BookMarked,
-    src: "mock2.png",
+    src: "/portfolio_fp/mock2.png",
     philosophy:
       "Creemos en la autenticidad y la cercanía. Nuestro trabajo potencia negocios gastronómicos que buscan conectar con sus clientes a través de experiencias digitales cálidas y memorables.",
     description:
@@ -32,7 +33,7 @@ const projects = [
     title: "El Tostado",
     tags: ["Desarrollo Web", "Diseño Web"],
     icon: TreePine,
-    src: "mock3.png",
+    src: "/portfolio_fp/mock3.png",
     philosophy:
       "Buscamos impulsar marcas con propósito. Trabajamos con negocios que quieren crecer de manera sostenible y dejar huella positiva en su entorno.",
     description:
@@ -41,9 +42,7 @@ const projects = [
 ];
 ---
 
-<div
-  class="bg-cream flex flex-col text-cream py-20 md:py-10 md:pt-12 px-8 md:px-0"
->
+<Section backgroundColor="bg-cream" textColor="tertiary">
   <main
     class="container mx-auto min-h-screen flex flex-col justify-around items-center gap-16"
   >
@@ -63,13 +62,13 @@ const projects = [
       }
     </section>
 
-    <XTFooter
+    <!-- <XTFooter
       title="¿Quieres ver más?"
       subtitle="Explora nuestra galería de proyectos para descubrir más sobre nuestro trabajo y cómo podemos ayudarte a alcanzar tus objetivos digitales."
       buttonText="Ver nuestros proyectos"
-    />
+    /> -->
   </main>
-</div>
+</Section>
 
 <style>
   .gradient {

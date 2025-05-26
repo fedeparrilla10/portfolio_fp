@@ -4,10 +4,14 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { Mail, MapPin, Phone, ArrowRight, CheckCheck } from "@lucide/astro";
+import Section from "./Section.astro";
 ---
 
-<div class="bg-cream text-tertiary py-20 md:py-10 md:my-4">
-  <main class="container mx-auto flex flex-col items-center gap-16">
+<Section backgroundColor="bg-cream" textColor="tertiary">
+  <main
+    id="contact"
+    class="container mx-auto flex flex-col items-center gap-16"
+  >
     <XTTitle
       title="Hablemos"
       subtitle="Cuéntanos tu idea o proyecto. Te responderemos lo antes posible."
@@ -93,7 +97,7 @@ import { Mail, MapPin, Phone, ArrowRight, CheckCheck } from "@lucide/astro";
       </aside>
     </section>
   </main>
-</div>
+</Section>
 
 <script type="module">
   const form = document.getElementById("contact-form");

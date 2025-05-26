@@ -1,10 +1,10 @@
 ---
+import Section from "./Section.astro";
 import XTTitle from "./XTTitle.astro";
+import XTFooter from "./XTFooter.astro";
 ---
 
-<div
-  class="bg-cream flex flex-col text-dark py-20 md:py-10 md:pt-12 px-8 md:px-0"
->
+<Section backgroundColor="bg-cream" textColor="tertiary" customClass="">
   <main class="container mx-auto flex flex-col items-center gap-16">
     <XTTitle
       title="¿Quién soy?"
@@ -18,18 +18,15 @@ import XTTitle from "./XTTitle.astro";
       <div class="flex flex-col md:flex-row items-center gap-12">
         <div class="overflow-hidden relative flex items-center justify-center">
           <img
-            src="yo2.png"
+            src="/portfolio_fp/yo2.png"
             alt="Foto de perfil"
             class="w-[300px] h-[250px] relative z-10 shadow-xl object-cover"
             style={{
               boxShadow:
-                "0 8px 32px 0 rgba(56,189,248,0.25), 0 4px 24px 0 rgba(251,191,36,0.35)", // lightblue y tertiary
+                "0 8px 32px 0 rgba(56,189,248,0.25), 0 4px 24px 0 rgba(251,191,36,0.35)",
             }}
           />
         </div>
-        {/* Gradiente para desvanecer la parte inferior */}
-
-        {/* Línea vertical decorativa */}
 
         <div
           class="hidden md:flex h-[300px] w-px bg-gradient-to-b from-tertiary via-lightBlue-400 to-tertiary mx-6 opacity-70"
@@ -59,5 +56,11 @@ import XTTitle from "./XTTitle.astro";
         </div>
       </div>
     </section>
+
+    <XTFooter
+      title="¿Listo para llevar tu presencia digital al siguiente nivel?"
+      subtitle="Contáctame y empecemos a crear cosas interesantes juntos."
+      buttonText="Solicitar una consulta"
+    />
   </main>
-</div>
+</Section>
